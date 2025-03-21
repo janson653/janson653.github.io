@@ -1,0 +1,24 @@
+# 主导航菜单
+- title: 首页
+  url: /
+  icon: home
+
+- title: 文章
+  url: /articles/
+  icon: article
+
+- title: 分类
+  url: /categories/
+  icon: category
+
+- title: 标签
+  url: /tags/
+  icon: tag
+
+- title: 归档
+  url: /archive/
+  icon: archive
+
+- title: 关于
+  url: /about/
+  icon: info 

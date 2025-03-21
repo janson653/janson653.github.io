@@ -1,26 +1,26 @@
 source "https://rubygems.org"
 
-# Jekyll版本
-gem "jekyll", "~> 4.3.2"
-
-# 主题
-gem "minima", "~> 2.5"
-
-# Jekyll插件
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-seo-tag", "~> 2.7"
-  gem "jekyll-sitemap", "~> 1.4"
-  gem "jekyll-paginate", "~> 1.1"
-end
+# 使用github-pages gem来确保与GitHub Pages兼容
+gem "github-pages", "~> 228", group: :jekyll_plugins
 
 # Windows和JRuby平台需要的依赖
 platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"
+  gem "wdm", "~> 0.1.1"
 end
 
-# 性能优化
-gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
-gem "webrick", "~> 1.8" 
+# Jekyll 插件 (GitHub Pages 支持的插件)
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.15"
+  gem "jekyll-seo-tag", "~> 2.8"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-gist", "~> 1.5"
+  gem "jekyll-github-metadata", "~> 2.13"
+end
+
+# 开发相关
+group :development do
+  gem "webrick", "~> 1.7"
+end 

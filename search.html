@@ -1,0 +1,207 @@
+---
+layout: default
+title: 搜索结果
+permalink: /search/
+---
+
+<div class="container">
+  <h1 class="page-title mb-4">搜索结果</h1>
+  
+  <div class="search-container mb-5">
+    <form id="search-form" class="search-form-large">
+      <div class="input-group">
+        <input type="search" id="search-input" name="q" class="form-control" placeholder="输入关键词搜索..." aria-label="搜索" value="{{ site.params.query }}">
+        <button type="submit" class="btn btn-primary">搜索</button>
+      </div>
+    </form>
+  </div>
+  
+  <div id="search-results" class="search-results">
+    <!-- 搜索结果将通过JavaScript动态加载 -->
+    <p id="search-loading" class="text-center">正在加载结果...</p>
+    <div id="search-no-results" class="text-center" style="display: none;">
+      <p>没有找到匹配的结果。</p>
+      <p>请尝试其他关键词。</p>
+    </div>
+    <ul id="results-list" class="list-unstyled">
+      <!-- 结果将动态插入这里 -->
+    </ul>
+  </div>
+  
+  <script>
+    // 搜索功能
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchForm = document.getElementById('search-form');
+      const searchInput = document.getElementById('search-input');
+      const resultsList = document.getElementById('results-list');
+      const searchLoading = document.getElementById('search-loading');
+      const searchNoResults = document.getElementById('search-no-results');
+      
+      // 获取URL参数中的查询
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('q');
+      
+      if (query) {
+        searchInput.value = query;
+        performSearch(query);
+      } else {
+        searchLoading.style.display = 'none';
+      }
+      
+      // 提交搜索表单
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const newQuery = searchInput.value.trim();
+        if (newQuery) {
+          // 更新URL
+          const newUrl = window.location.pathname + '?q=' + encodeURIComponent(newQuery);
+          window.history.pushState({}, '', newUrl);
+          
+          performSearch(newQuery);
+        }
+      });
+      
+      // 执行搜索
+      function performSearch(searchQuery) {
+        searchLoading.style.display = 'block';
+        searchNoResults.style.display = 'none';
+        resultsList.innerHTML = '';
+        
+        fetch('/search.json')
+          .then(response => response.json())
+          .then(data => {
+            const results = data.filter(item => {
+              const regex = new RegExp(searchQuery, 'i');
+              return regex.test(item.title) || regex.test(item.content) || 
+                    (item.categories && regex.test(item.categories.join(' '))) || 
+                    (item.tags && regex.test(item.tags.join(' ')));
+            });
+            
+            searchLoading.style.display = 'none';
+            
+            if (results.length > 0) {
+              results.forEach(result => {
+                const li = document.createElement('li');
+                li.className = 'search-result-item mb-4';
+                
+                const title = document.createElement('h3');
+                const titleLink = document.createElement('a');
+                titleLink.href = result.url;
+                titleLink.textContent = result.title;
+                title.appendChild(titleLink);
+                
+                const excerpt = document.createElement('p');
+                excerpt.className = 'search-result-excerpt';
+                const content = result.content.substring(0, 200) + '...';
+                
+                // 高亮搜索词
+                excerpt.innerHTML = content.replace(new RegExp(searchQuery, 'gi'), match => 
+                  `<span class="search-highlight">${match}</span>`
+                );
+                
+                const meta = document.createElement('div');
+                meta.className = 'search-result-meta';
+                meta.innerHTML = `<span class="search-result-date">${result.date}</span>`;
+                
+                if (result.categories && result.categories.length) {
+                  const cats = document.createElement('span');
+                  cats.className = 'search-result-categories';
+                  cats.innerHTML = ' | 分类: ' + result.categories.map(cat => 
+                    `<a href="/categories/#${cat.toLowerCase()}">${cat}</a>`
+                  ).join(', ');
+                  meta.appendChild(cats);
+                }
+                
+                li.appendChild(title);
+                li.appendChild(excerpt);
+                li.appendChild(meta);
+                resultsList.appendChild(li);
+              });
+            } else {
+              searchNoResults.style.display = 'block';
+            }
+          })
+          .catch(error => {
+            console.error('搜索出错:', error);
+            searchLoading.style.display = 'none';
+            searchNoResults.style.display = 'block';
+          });
+      }
+    });
+  </script>
+  
+  <style>
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      background-clip: padding-box;
+      border: 1px solid var(--border-color);
+      border-radius: 0.25rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    
+    .input-group {
+      position: relative;
+      display: flex;
+      width: 100%;
+    }
+    
+    .search-form-large {
+      margin-bottom: 2rem;
+    }
+    
+    .search-form-large .form-control {
+      height: 50px;
+      font-size: 1.25rem;
+    }
+    
+    .search-form-large .btn {
+      padding: 0.5rem 2rem;
+    }
+    
+    .search-highlight {
+      background-color: rgba(74, 144, 226, 0.2);
+      padding: 0.1rem 0.2rem;
+      border-radius: 2px;
+      font-weight: bold;
+    }
+    
+    .search-result-item {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+    
+    .search-result-item h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .search-result-excerpt {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .search-result-meta {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    .search-result-date,
+    .search-result-categories {
+      display: inline-block;
+    }
+    
+    .search-result-categories a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    
+    .search-result-categories a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</div> 

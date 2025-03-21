@@ -1,0 +1,42 @@
+---
+layout: default
+title: 文章分类
+permalink: /categories/
+---
+
+<div class="container">
+  <h1 class="page-title mb-4">文章分类</h1>
+  
+  <div class="categories-list">
+    {% assign sorted_categories = site.categories | sort %}
+    
+    {% for category in sorted_categories %}
+    <div class="category-section mb-5" id="{{ category[0] | slugize }}">
+      <h2 class="category-title">{{ category[0] }}</h2>
+      <div class="category-count mb-3">共 {{ category[1].size }} 篇文章</div>
+      
+      <div class="category-posts">
+        <ul class="list-unstyled">
+        {% for post in category[1] %}
+          <li class="category-post-item mb-2">
+            <span class="post-date text-muted me-2">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <div class="categories-index my-4">
+    <h3>分类索引</h3>
+    <div class="categories-cloud">
+      {% for category in sorted_categories %}
+        <a class="btn btn-outline-primary me-2 mb-2" href="#{{ category[0] | slugize }}">
+          {{ category[0] }} <span class="badge bg-secondary">{{ category[1].size }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div> 

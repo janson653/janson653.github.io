@@ -7,6 +7,19 @@ baseurl: "" # 您的网站子路径，例如 /blog
 url: "https://janson653.github.io" # 您的网站URL
 github_username: janson653
 
+# SEO设置
+author: Janson
+keywords: [技术博客, JavaCV, 视频处理, 图像处理, 技术分享]
+lang: zh-CN
+twitter:
+  username: janson653
+  card: summary_large_image
+social:
+  name: Janson
+  links:
+    - https://github.com/janson653
+    - https://twitter.com/janson653
+
 # 构建设置
 markdown: kramdown
 theme: minima
@@ -14,10 +27,21 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-minifier
+  - jekyll-image-size
+
+# 性能优化
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  blanklines: false
+  profile: false
 
 # 文章设置
 permalink: /:categories/:year/:month/:day/:title/
-paginate: 5
+paginate: 10
 paginate_path: "/page:num/"
 
 # 集合设置
@@ -25,6 +49,9 @@ collections:
   tutorials:
     output: true
     permalink: /:collection/:name/
+  docs:
+    output: true
+    permalink: /docs/:path/
 
 # 排除文件
 exclude:
@@ -42,6 +69,8 @@ exclude:
 # Sass设置
 sass:
   style: compressed
+  sass_dir: _sass
+  sourcemap: never
 
 # 默认YAML前置数据设置
 defaults:
@@ -52,6 +81,9 @@ defaults:
     values:
       layout: "post"
       author: "Janson"
+      comments: true
+      toc: true
+      sharing: true
   -
     scope:
       path: ""
@@ -64,4 +96,33 @@ defaults:
       type: "tutorials"
     values:
       layout: "post"
-      author: "Janson" 
+      author: "Janson"
+      comments: true
+      toc: true
+      sharing: true
+
+# 评论系统设置
+comments:
+  provider: "gitalk"  # 可选：gitalk, disqus
+  gitalk:
+    clientID: your_client_id
+    clientSecret: your_client_secret
+    repo: janson653.github.io
+    owner: janson653
+    admin: ['janson653']
+
+# Analytics设置
+google_analytics: # UA-XXXXXXXX-X
+baidu_analytics: # your baidu analytics id
+
+# 站点地图设置
+sitemap:
+  filename: "/sitemap.xml"
+  exclude:
+    - "/atom.xml"
+    - "/feed.xml"
+    - "/feed/index.xml"
+  include_posts:
+    - "/index.html"
+  change_frequency_name: "change_frequency"
+  priority_name: "priority" 
