@@ -1,8 +1,8 @@
 # 站点设置
-title: JavaCV学习笔记 | 张先生的博客
-email: example@example.com
+title: Janson Blog
+email: zhangqian653@163.com
 description: >- 
-  这是一个专注于JavaCV技术的博客，分享JavaCV视频处理技术的学习心得与实践经验。
+  这是一个专注于技术学习的博客，分享技术学习心得与实践经验。
 baseurl: "" # 您的网站子路径，例如 /blog
 url: "https://janson653.github.io" # 您的网站URL
 github_username: janson653
@@ -36,9 +36,8 @@ exclude:
   - node_modules/
   - vendor/
   - README.md
-  - plan.md
-  - task_progress.md
   - CNAME
+  - task/
 
 # Sass设置
 sass:
@@ -52,7 +51,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "张先生"
+      author: "Janson"
   -
     scope:
       path: ""
@@ -65,4 +64,4 @@ defaults:
       type: "tutorials"
     values:
       layout: "post"
-      author: "张先生" 
+      author: "Janson" 

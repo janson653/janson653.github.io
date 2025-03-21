@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "JavaCV入门指南：环境搭建与基础概念"
-date: 2023-10-15
-category: "JavaCV入门"
+date: 2025-03-21
+categories: javacv
 tags: [JavaCV, Java, 视频处理, OpenCV, 入门教程]
-excerpt: "在当今数字化时代，视频处理技术已经渗透到各个领域。JavaCV作为连接Java世界与计算机视觉领域的桥梁，为开发者提供了强大而便捷的视频处理解决方案。"
+description: "在当今数字化时代，视频处理技术已经渗透到各个领域。JavaCV作为连接Java世界与计算机视觉领域的桥梁，为开发者提供了强大而便捷的视频处理解决方案。"
 ---
 
 # JavaCV入门指南：环境搭建与基础概念
