@@ -1,0 +1,48 @@
+404: Not Found
+
+local:
+  js:
+    src: /assets/js
+    dist: /assets/js/dist
+  img: /assets/img
+
+cdn:
+  jsdelivr:
+    js:
+      src: https://cdn.jsdelivr.net/npm
+      dist: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-static-assets@v6.4.2
+
+bootstrap:
+  js: https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js
+
+search:
+  js: /assets/js/dist/commons.min.js
+
+toc:
+  js: /assets/js/dist/commons.min.js
+
+dayjs:
+  js:
+    common: https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js
+    locale: https://cdn.jsdelivr.net/npm/dayjs@1.10.7/locale/:LOCALE.min.js
+    relativeTime: https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/relativeTime.min.js
+    localizedFormat: https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/localizedFormat.min.js
+
+clipboard:
+  js: https://cdn.jsdelivr.net/npm/clipboard@2.0.9/dist/clipboard.min.js
+
+mermaid:
+  js: https://cdn.jsdelivr.net/npm/mermaid@8.13.3/dist/mermaid.min.js
+
+lazysizes:
+  js: https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js
+
+lazy-polyfill:
+  js: https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@1.5.4/dist/loading-attribute-polyfill.min.js
+
+glightbox:
+  js: https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js
+  css: https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
+
+mathjax:
+  js: https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js
