@@ -1,0 +1,68 @@
+# 站点设置
+title: JavaCV学习笔记 | 张先生的博客
+email: example@example.com
+description: >- 
+  这是一个专注于JavaCV技术的博客，分享JavaCV视频处理技术的学习心得与实践经验。
+baseurl: "" # 您的网站子路径，例如 /blog
+url: "https://janson653.github.io" # 您的网站URL
+github_username: janson653
+
+# 构建设置
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 文章设置
+permalink: /:categories/:year/:month/:day/:title/
+paginate: 5
+paginate_path: "/page:num/"
+
+# 集合设置
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:name/
+
+# 排除文件
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
+  - plan.md
+  - task_progress.md
+  - CNAME
+
+# Sass设置
+sass:
+  style: compressed
+
+# 默认YAML前置数据设置
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "张先生"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "tutorials"
+    values:
+      layout: "post"
+      author: "张先生" 

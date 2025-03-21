@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Janson Blog</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/about/' %}active{% endif %}" href="/about/">关于</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/janson653/janson653.github.io" target="_blank">GitHub</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> 
