@@ -1,97 +1,43 @@
-# Janson Blog
+# Chirpy Starter
 
-这是一个使用GitHub Pages和Jekyll部署的静态博客网站，专注于分享JavaCV视频处理技术的学习心得与实践经验。
+[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
+[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
-## 功能特点
+When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
+`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
+from the theme's gem. If you have ever installed this theme gem, you can use the command
+`bundle info --path jekyll-theme-chirpy` to locate these files.
 
-- 纯静态网站，无需服务器
-- 支持Markdown格式的文章展示
-- 响应式设计，适配各种设备
-- 代码高亮支持多种编程语言
-- 文章目录自动生成
-- 简洁美观的UI设计
+The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
+able to enjoy the out-of-the-box experience when using feature-rich themes.
 
-## 目录结构
+To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
+Jekyll site. The following is a list of targets:
 
-```
+```shell
 .
-├── _config.yml          # Jekyll配置文件
-├── _data/               # 网站数据文件
-├── _drafts/             # 草稿文章
-├── _includes/           # 可复用的HTML片段
-│   ├── footer.html      # 页脚
-│   └── navbar.html      # 导航栏
-├── _layouts/            # 页面布局模板
-│   ├── default.html     # 默认布局
-│   ├── home.html        # 首页布局
-│   ├── page.html        # 普通页面布局
-│   └── post.html        # 文章页面布局
-├── _posts/              # 已发布的文章
-├── assets/              # 静态资源文件
-│   ├── css/             # CSS样式文件
-│   ├── images/          # 图片文件
-│   └── js/              # JavaScript文件
-├── about.md             # 关于页面
-├── index.md             # 首页
-├── Gemfile              # Ruby依赖管理
-└── README.md            # 项目说明
+├── _config.yml
+├── _plugins
+├── _tabs
+└── index.html
 ```
 
-## 技术栈
+To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
+latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
 
-- Jekyll（静态网站生成器）
-- HTML5/CSS3
-- JavaScript (ES6+)
-- Bootstrap 5
-- Markdown/Liquid
-- GitHub Pages (托管服务)
+## Usage
 
-## 本地开发
+Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-1. 安装依赖
-   ```bash
-   # 安装Ruby和Jekyll（如果尚未安装）
-   # Ubuntu/Debian
-   sudo apt-get install ruby-full build-essential zlib1g-dev
-   
-   # 安装Bundler和项目依赖
-   gem install bundler
-   bundle install
-   ```
+## Contributing
 
-2. 本地运行
-   ```bash
-   bundle exec jekyll serve
-   ```
+This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
 
-3. 在浏览器中访问 `http://localhost:4000`
+## License
 
-## 添加新文章
+This work is published under [MIT][mit] License.
 
-1. 在`_posts`目录下创建Markdown文件，文件名格式为`YYYY-MM-DD-title.md`
-2. 在文件开头添加Front Matter，例如：
-   ```yaml
-   ---
-   layout: post
-   title: "文章标题"
-   date: YYYY-MM-DD
-   category: "分类"
-   tags: [标签1, 标签2]
-   excerpt: "文章摘要"
-   ---
-   ```
-3. 编写Markdown内容
-
-## 部署
-
-项目使用GitHub Pages自动部署，只需将更改推送到主分支：
-
-```bash
-git add .
-git commit -m "更新内容"
-git push origin main
-```
-
-## 许可证
-
-MIT License 
+[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
+[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
+[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
+[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE

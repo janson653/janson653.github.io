@@ -1,26 +1,27 @@
-# Jekyll构建文件
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Ruby依赖
-vendor/
-.bundle/
+# Bundler cache
+.bundle
+vendor
 Gemfile.lock
 
-# 操作系统文件
-.DS_Store
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
 
-# 编辑器文件
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
+# RubyGems
+*.gem
 
-# 日志文件
-*.log 
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+_sass/vendors
+assets/js/dist

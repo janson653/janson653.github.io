@@ -1,9 +1,17 @@
 ---
-layout: post
 title: "Java Streams API实战指南"
 date: 2023-06-15 10:00:00 +0800
-categories: java
+categories: [Java, 编程技巧]
 tags: [java8, streams, functional]
+author: Janson
+pin: false
+math: false
+mermaid: false
+image:
+  path: /assets/img/java-streams.jpg
+  width: 800
+  height: 500
+  alt: Java Streams API
 description: "深入讲解Java Streams API的使用方法，提高代码简洁性和可读性的实用技巧"
 ---
 
