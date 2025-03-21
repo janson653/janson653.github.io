@@ -16,7 +16,7 @@ end
 gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
 
 group :jekyll_plugins do
-  gem "jekyll-feed"
+  # gem "jekyll-feed" # 暂时禁用，避免与Chirpy主题的feed.xml冲突
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
   gem "jekyll-paginate"
