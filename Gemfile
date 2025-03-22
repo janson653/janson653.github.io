@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
+gem "jekyll", "~> 4.3.2"
 
 # Theme specified in _config.yml
 gem "jekyll-theme-chirpy", "~> 6.4.2"
@@ -24,5 +24,5 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-paginate"
   gem "jekyll-archives"
-  gem "jekyll-remote-theme"
+  gem "jekyll-remote-theme", "~> 0.4.3"
 end
