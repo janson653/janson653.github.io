@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -130,7 +130,7 @@
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -147,6 +147,108 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://janson653.github.io/2025/03/26/%E4%BD%BF%E7%94%A8JavaCV%E5%AE%9E%E7%8E%B0RTSP%E6%B5%81%E8%BD%ACFLV%E5%AD%98%E5%82%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Janson">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Janson's Blog">
+      <meta itemprop="description" content="Just for fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Janson's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/26/%E4%BD%BF%E7%94%A8JavaCV%E5%AE%9E%E7%8E%B0RTSP%E6%B5%81%E8%BD%ACFLV%E5%AD%98%E5%82%A8/" class="post-title-link" itemprop="url">使用JavaCV实现RTSP流转FLV存储</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-03-26 21:00:00 / Modified: 21:09:51" itemprop="dateCreated datePublished" datetime="2025-03-26T21:00:00+08:00">2025-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">技术教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="使用JavaCV实现RTSP流转FLV存储"><a href="#使用JavaCV实现RTSP流转FLV存储" class="headerlink" title="使用JavaCV实现RTSP流转FLV存储"></a>使用JavaCV实现RTSP流转FLV存储</h1><h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>在视频监控、直播系统等场景中，经常需要将RTSP视频流保存为本地文件。本文将介绍如何使用JavaCV实现RTSP流的接收和FLV格式的本地存储，并加入定时录制功能。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>在开始之前，我们需要在项目中添加以下依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- JavaCV平台接口 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.bytedeco<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javacv-platform<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="核心实现"><a href="#核心实现" class="headerlink" title="核心实现"></a>核心实现</h2><p>我们将创建一个<code>RtspToFlvRecorder</code>类来实现核心功能：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.bytedeco.ffmpeg.avcodec.AVPacket;</span><br><span class="line"><span class="keyword">import</span> org.bytedeco.javacv.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RtspToFlvRecorder</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String rtspUrl;        <span class="comment">// RTSP流地址</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String outputFile;     <span class="comment">// 输出文件路径</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> duration;          <span class="comment">// 录制时长（秒）</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">boolean</span> isRunning;  <span class="comment">// 运行状态标志</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">RtspToFlvRecorder</span><span class="params">(String rtspUrl, String outputFile, <span class="type">int</span> duration)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.rtspUrl = rtspUrl;</span><br><span class="line">        <span class="built_in">this</span>.outputFile = outputFile;</span><br><span class="line">        <span class="built_in">this</span>.duration = duration;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">startRecording</span><span class="params">()</span> &#123;</span><br><span class="line">        isRunning = <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span> (<span class="type">FFmpegFrameGrabber</span> <span class="variable">grabber</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FFmpegFrameGrabber</span>(rtspUrl)) &#123;</span><br><span class="line">            <span class="comment">// 配置RTSP相关参数</span></span><br><span class="line">            grabber.setOption(<span class="string">&quot;rtsp_transport&quot;</span>, <span class="string">&quot;tcp&quot;</span>); <span class="comment">// 使用TCP方式</span></span><br><span class="line">            grabber.setOption(<span class="string">&quot;stimeout&quot;</span>, <span class="string">&quot;2000000&quot;</span>);   <span class="comment">// 设置超时时间</span></span><br><span class="line">            grabber.start();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 创建录制器</span></span><br><span class="line">            <span class="type">FFmpegFrameRecorder</span> <span class="variable">recorder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FFmpegFrameRecorder</span>(outputFile, </span><br><span class="line">                grabber.getImageWidth(), </span><br><span class="line">                grabber.getImageHeight());</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 配置录制参数</span></span><br><span class="line">            recorder.setVideoCodec(grabber.getVideoCodec());</span><br><span class="line">            recorder.setFormat(<span class="string">&quot;flv&quot;</span>);</span><br><span class="line">            recorder.setFrameRate(grabber.getFrameRate());</span><br><span class="line">            recorder.setVideoBitrate(grabber.getVideoBitrate());</span><br><span class="line">            recorder.start();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 获取流的帧率</span></span><br><span class="line">            <span class="type">double</span> <span class="variable">frameRate</span> <span class="operator">=</span> grabber.getFrameRate();</span><br><span class="line">            <span class="type">int</span> <span class="variable">totalFrames</span> <span class="operator">=</span> (<span class="type">int</span>) (frameRate * duration); <span class="comment">// 计算总帧数</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 开始时间</span></span><br><span class="line">            <span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">            <span class="type">int</span> <span class="variable">videoFrameCount</span> <span class="operator">=</span> <span class="number">0</span>; <span class="comment">// 视频帧计数器</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 录制循环</span></span><br><span class="line">            <span class="keyword">while</span> (isRunning &amp;&amp; videoFrameCount &lt; totalFrames) &#123;</span><br><span class="line">                <span class="comment">// 获取视频帧</span></span><br><span class="line">                <span class="type">Frame</span> <span class="variable">frame</span> <span class="operator">=</span> grabber.grabFrame();</span><br><span class="line">                <span class="keyword">if</span> (frame != <span class="literal">null</span> &amp;&amp; frame.image != <span class="literal">null</span>) &#123; <span class="comment">// 确保帧有效且包含图像</span></span><br><span class="line">                    recorder.record(frame); <span class="comment">// 录制视频帧</span></span><br><span class="line">                    videoFrameCount++; <span class="comment">// 增加视频帧计数</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 检查时间是否到达</span></span><br><span class="line">                <span class="keyword">if</span> (isTimeUp(startTime)) &#123;</span><br><span class="line">                    <span class="keyword">break</span>; <span class="comment">// 时间到达，退出循环</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 正常结束录制</span></span><br><span class="line">            recorder.stop();</span><br><span class="line">            recorder.close();</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;录制过程发生错误: &quot;</span> + e.getMessage(), e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">isTimeUp</span><span class="params">(<span class="type">long</span> startTime)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (System.currentTimeMillis() - startTime) &gt;= duration * <span class="number">1000L</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stopRecording</span><span class="params">()</span> &#123;</span><br><span class="line">        isRunning = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RecordingDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">rtspUrl</span> <span class="operator">=</span> <span class="string">&quot;rtsp://your-camera-ip:554/stream&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">outputFile</span> <span class="operator">=</span> <span class="string">&quot;D:/recordings/output.flv&quot;</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">duration</span> <span class="operator">=</span> <span class="number">60</span>; <span class="comment">// 录制60秒</span></span><br><span class="line">        </span><br><span class="line">        <span class="type">RtspToFlvRecorder</span> <span class="variable">recorder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RtspToFlvRecorder</span>(rtspUrl, outputFile, duration);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            recorder.startRecording();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>RTSP地址格式：确保RTSP URL格式正确，通常格式为：<code>rtsp://ip:port/stream</code></li>
+<li>存储路径：确保输出文件路径存在且有写入权限</li>
+<li>网络状况：RTSP流的稳定性受网络状况影响，建议添加重试机制</li>
+<li>资源释放：程序结束时要正确释放资源，避免内存泄漏</li>
+<li>异常处理：在生产环境中需要完善的异常处理机制</li>
+</ol>
+<h2 id="扩展优化"><a href="#扩展优化" class="headerlink" title="扩展优化"></a>扩展优化</h2><ol>
+<li>添加录制状态监控</li>
+<li>实现断线重连机制</li>
+<li>添加录制质量参数配置</li>
+<li>支持多路流同时录制</li>
+<li>添加录制进度回调</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文介绍了如何使用JavaCV实现RTSP流转FLV的录制功能，并加入了定时控制机制。通过合理的参数配置和异常处理，可以实现稳定的视频流录制功能。在实际应用中，可以根据具体需求进行功能扩展和优化。 </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
