@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"janson653.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="提示词设计指南：从入门到精通什么是提示词设计？提示词设计是指在与AI交互时，通过精心构造的指令来引导AI产生预期输出的过程。一个完整的提示词通常包含：  明确的任务描述 必要的上下文信息 具体的输出要求 合理的约束条件  有效的提示词就像一把钥匙，能够精准地打开AI能力的大门，让它成为你工作和学习中的得力助手。 为什么要学习提示词设计？掌握提示词设计能带来以下核心价值：  提高效率：减少反复沟通，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提示词设计指南：从入门到精通">
+<meta property="og:url" content="https://janson653.github.io/2025/03/28/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Janson&#39;s Blog">
+<meta property="og:description" content="提示词设计指南：从入门到精通什么是提示词设计？提示词设计是指在与AI交互时，通过精心构造的指令来引导AI产生预期输出的过程。一个完整的提示词通常包含：  明确的任务描述 必要的上下文信息 具体的输出要求 合理的约束条件  有效的提示词就像一把钥匙，能够精准地打开AI能力的大门，让它成为你工作和学习中的得力助手。 为什么要学习提示词设计？掌握提示词设计能带来以下核心价值：  提高效率：减少反复沟通，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-28T13:54:09.000Z">
+<meta property="article:modified_time" content="2025-03-28T14:09:35.115Z">
+<meta property="article:author" content="Janson">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="提示词工程">
+<meta property="article:tag" content="提示词设计">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://janson653.github.io/2025/03/28/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://janson653.github.io/2025/03/28/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97/","path":"2025/03/28/提示词设计指南/","title":"提示词设计指南：从入门到精通"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>提示词设计指南：从入门到精通 | Janson's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Janson's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Just for fun</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97%EF%BC%9A%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A"><span class="nav-number">1.</span> <span class="nav-text">提示词设计指南：从入门到精通</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是提示词设计？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">为什么要学习提示词设计？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E6%9C%89%E6%95%88%E7%9A%84%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">如何设计有效的提示词？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CRAC%E6%A8%A1%E5%9E%8B%EF%BC%9A%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A1%86%E6%9E%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. CRAC模型：提示词设计的核心框架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Context%EF%BC%88%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%89"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Context（上下文）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Request%EF%BC%88%E9%9C%80%E6%B1%82%EF%BC%89"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Request（需求）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action%EF%BC%88%E8%A1%8C%E5%8A%A8%EF%BC%89"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Action（行动）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Constraints%EF%BC%88%E7%BA%A6%E6%9D%9F%EF%BC%89"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">Constraints（约束）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 常见场景应用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E4%B8%8E%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">编程与代码优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">流程图设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%86%99%E4%BD%9C"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">文档写作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">内容分析与总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%BC%98%E5%8C%96%E7%9A%84%E8%BF%AD%E4%BB%A3%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. 提示词优化的迭代方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8E%E7%AE%80%E5%8D%95%E5%88%B0%E5%A4%8D%E6%9D%82%E7%9A%84%E6%B8%90%E8%BF%9B%E5%BC%8F%E4%BC%98%E5%8C%96"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">从简单到复杂的渐进式优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%95%88%E6%9E%9C%E8%AF%84%E4%BC%B0%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="nav-number">1.3.4.</span> <span class="nav-text">4. 提示词效果评估与优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">评估指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">持续优化策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">1.4.</span> <span class="nav-text">结语</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Janson</p>
+  <div class="site-description" itemprop="description">Just for fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://janson653.github.io/2025/03/28/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Janson">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Janson's Blog">
+      <meta itemprop="description" content="Just for fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="提示词设计指南：从入门到精通 | Janson's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          提示词设计指南：从入门到精通
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-03-28 21:54:09 / Modified: 22:09:35" itemprop="dateCreated datePublished" datetime="2025-03-28T21:54:09+08:00">2025-03-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="提示词设计指南：从入门到精通"><a href="#提示词设计指南：从入门到精通" class="headerlink" title="提示词设计指南：从入门到精通"></a>提示词设计指南：从入门到精通</h1><h2 id="什么是提示词设计？"><a href="#什么是提示词设计？" class="headerlink" title="什么是提示词设计？"></a>什么是提示词设计？</h2><p>提示词设计是指在与AI交互时，通过精心构造的指令来引导AI产生预期输出的过程。一个完整的提示词通常包含：</p>
+<ul>
+<li>明确的任务描述</li>
+<li>必要的上下文信息</li>
+<li>具体的输出要求</li>
+<li>合理的约束条件</li>
+</ul>
+<p>有效的提示词就像一把钥匙，能够精准地打开AI能力的大门，让它成为你工作和学习中的得力助手。</p>
+<h2 id="为什么要学习提示词设计？"><a href="#为什么要学习提示词设计？" class="headerlink" title="为什么要学习提示词设计？"></a>为什么要学习提示词设计？</h2><p>掌握提示词设计能带来以下核心价值：</p>
+<ol>
+<li><strong>提高效率</strong>：减少反复沟通，一次性获得所需结果</li>
+<li><strong>提升质量</strong>：获得更精准、更专业的输出内容</li>
+<li><strong>扩展应用</strong>：解锁AI在各种场景中的应用潜力</li>
+<li><strong>优化协作</strong>：让AI更好地理解并完成复杂任务</li>
+<li><strong>节省成本</strong>：减少AI使用次数，提高资源利用率</li>
+</ol>
+<p>当你掌握了提示词设计技巧，与AI的交互将从简单的”问答”升级为高效的”协作”。</p>
+<h2 id="如何设计有效的提示词？"><a href="#如何设计有效的提示词？" class="headerlink" title="如何设计有效的提示词？"></a>如何设计有效的提示词？</h2><h3 id="1-CRAC模型：提示词设计的核心框架"><a href="#1-CRAC模型：提示词设计的核心框架" class="headerlink" title="1. CRAC模型：提示词设计的核心框架"></a>1. CRAC模型：提示词设计的核心框架</h3><p>高效的提示词设计可以遵循CRAC模型：</p>
+<h4 id="Context（上下文）"><a href="#Context（上下文）" class="headerlink" title="Context（上下文）"></a>Context（上下文）</h4><p>上下文为AI提供了理解任务的背景框架：</p>
+<ul>
+<li><p><strong>角色设定</strong>：明确AI应扮演的专业角色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一位专业的软件架构师，精通分布式系统设计</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>场景描述</strong>：提供任务的具体场景</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个高并发电商平台的技术选型阶段</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>背景信息</strong>：提供必要的前置知识</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">考虑到我们的团队主要有Java和Python背景</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Request（需求）"><a href="#Request（需求）" class="headerlink" title="Request（需求）"></a>Request（需求）</h4><p>清晰的需求陈述是获得精准输出的基础：</p>
+<ul>
+<li><p><strong>任务描述</strong>：明确具体的任务目标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请设计一个可处理每秒10000次请求的订单系统架构</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>范围界定</strong>：指定关注的具体方面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重点关注数据存储、缓存策略和服务拆分</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>输出格式</strong>：指定期望的输出形式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以Markdown格式输出，包含架构图（使用mermaid语法）和关键组件说明</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Action（行动）"><a href="#Action（行动）" class="headerlink" title="Action（行动）"></a>Action（行动）</h4><p>行动部分指导AI如何执行任务：</p>
+<ul>
+<li><p><strong>步骤指导</strong>：拆分任务为清晰的步骤</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">首先分析业务需求，然后确定技术选型，最后提供具体实现建议</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>思考方法</strong>：指定分析或解决问题的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用CAP理论分析不同数据库选择的优缺点</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>条件处理</strong>：设置条件分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果需要强一致性，则推荐使用...；如果更注重可用性，则考虑...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Constraints（约束）"><a href="#Constraints（约束）" class="headerlink" title="Constraints（约束）"></a>Constraints（约束）</h4><p>约束条件帮助确保输出满足特定要求：</p>
+<ul>
+<li><p><strong>限定条件</strong>：明确必须满足的条件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方案必须考虑云原生环境下的弹性伸缩</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>排除项</strong>：明确不需要考虑的方面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不需要详细讨论前端实现</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>质量要求</strong>：设定输出质量标准</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码示例必须包含错误处理和单元测试</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-常见场景应用示例"><a href="#2-常见场景应用示例" class="headerlink" title="2. 常见场景应用示例"></a>2. 常见场景应用示例</h3><h4 id="编程与代码优化"><a href="#编程与代码优化" class="headerlink" title="编程与代码优化"></a>编程与代码优化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">你是一位精通性能优化的高级后端开发工程师。请：</span><br><span class="line">1. 审查以下Java代码中的性能瓶颈</span><br><span class="line">2. 分析可能的内存泄漏问题</span><br><span class="line">3. 提供优化后的代码实现</span><br><span class="line"></span><br><span class="line">代码性能要求：</span><br><span class="line">- 能够处理百万级数据集</span><br><span class="line">- 响应时间控制在50ms内</span><br><span class="line">- 内存占用不超过1GB</span><br><span class="line"></span><br><span class="line">请首先分析代码结构，然后指出关键问题，最后给出改进建议和优化代码。</span><br><span class="line">不需要解释基础Java概念，重点关注性能优化策略。</span><br></pre></td></tr></table></figure>
+
+<h4 id="流程图设计"><a href="#流程图设计" class="headerlink" title="流程图设计"></a>流程图设计</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">作为业务分析师，请设计一个客户退款处理流程图：</span><br><span class="line">1. 使用mermaid流程图语法</span><br><span class="line">2. 包含以下关键节点：</span><br><span class="line">   - 退款申请提交</span><br><span class="line">   - 客服审核</span><br><span class="line">   - 财务审批</span><br><span class="line">   - 退款处理</span><br><span class="line">   - 结果通知</span><br><span class="line"></span><br><span class="line">流程需要考虑：</span><br><span class="line">- 多种退款原因的处理路径</span><br><span class="line">- 审核拒绝的申诉机制</span><br><span class="line">- 不同支付方式的退款时效</span><br><span class="line"></span><br><span class="line">请确保流程图简洁清晰，节点命名规范，并包含必要的决策分支和条件说明。</span><br></pre></td></tr></table></figure>
+
+<h4 id="文档写作"><a href="#文档写作" class="headerlink" title="文档写作"></a>文档写作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">扮演技术文档专家，请编写一份《微服务架构设计指南》：</span><br><span class="line">1. 目标读者是具有1-3年开发经验的后端工程师</span><br><span class="line">2. 需要涵盖以下内容：</span><br><span class="line">   - 微服务设计原则</span><br><span class="line">   - 服务边界划分方法</span><br><span class="line">   - 通信机制选择</span><br><span class="line">   - 数据一致性策略</span><br><span class="line">   - 部署与运维最佳实践</span><br><span class="line"></span><br><span class="line">要求：</span><br><span class="line">- 使用Markdown格式</span><br><span class="line">- 包含清晰的目录结构</span><br><span class="line">- 每部分提供实际案例说明</span><br><span class="line">- 总字数控制在3000字以内</span><br><span class="line"></span><br><span class="line">重点突出实用性和可操作性，避免过于理论化的内容。</span><br></pre></td></tr></table></figure>
+
+<h4 id="内容分析与总结"><a href="#内容分析与总结" class="headerlink" title="内容分析与总结"></a>内容分析与总结</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">作为数据分析专家，请对以下季度销售报告进行分析总结：</span><br><span class="line">1. 提取关键销售数据和趋势</span><br><span class="line">2. 使用SWOT框架分析业务状况</span><br><span class="line">3. 输出格式要求：</span><br><span class="line">   - 核心发现（不超过5点）</span><br><span class="line">   - 数据支持的关键洞察</span><br><span class="line">   - 针对下季度的3-5条行动建议</span><br><span class="line"></span><br><span class="line">分析重点：</span><br><span class="line">- 产品类别表现对比</span><br><span class="line">- 区域销售差异</span><br><span class="line">- 客户购买行为变化</span><br><span class="line">- 促销活动ROI</span><br><span class="line"></span><br><span class="line">请使用数据驱动决策的方法，确保建议具有可操作性和明确的预期结果。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-提示词优化的迭代方法"><a href="#3-提示词优化的迭代方法" class="headerlink" title="3. 提示词优化的迭代方法"></a>3. 提示词优化的迭代方法</h3><h4 id="从简单到复杂的渐进式优化"><a href="#从简单到复杂的渐进式优化" class="headerlink" title="从简单到复杂的渐进式优化"></a>从简单到复杂的渐进式优化</h4><p><strong>第一步：基础提示</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解释Docker容器的基本概念</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二步：增加角色与细节</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作为DevOps专家，解释Docker容器的核心概念，重点说明与虚拟机的区别，以及在微服务架构中的应用价值。</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三步：结构化与约束优化</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">作为DevOps专家，请用Markdown格式解释Docker容器的核心概念：</span><br><span class="line">1. 基本定义（50字以内）</span><br><span class="line">2. 与虚拟机的关键区别（列出3点）</span><br><span class="line">3. 在微服务架构中的应用（包含具体使用场景）</span><br><span class="line">4. 一个简单的Docker Compose示例</span><br><span class="line"></span><br><span class="line">面向对象是有1-2年开发经验的后端工程师，确保解释清晰易懂，避免过于基础的内容。</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-提示词效果评估与优化"><a href="#4-提示词效果评估与优化" class="headerlink" title="4. 提示词效果评估与优化"></a>4. 提示词效果评估与优化</h3><h4 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h4><ol>
+<li><strong>相关性</strong>：输出是否直接回答了问题，是否包含无关信息</li>
+<li><strong>完整性</strong>：是否覆盖了所有关键点，是否有重要信息缺失</li>
+<li><strong>准确性</strong>：信息是否准确无误，是否有事实性错误</li>
+<li><strong>实用性</strong>：输出是否可直接应用，是否提供了可操作的见解</li>
+<li><strong>一致性</strong>：多次测试结果是否一致，输出质量是否稳定</li>
+</ol>
+<h4 id="持续优化策略"><a href="#持续优化策略" class="headerlink" title="持续优化策略"></a>持续优化策略</h4><ol>
+<li><strong>建立提示词模板库</strong>：按场景和任务类型分类存储常用模板</li>
+<li><strong>记录效果与反馈</strong>：跟踪每个提示词的实际效果</li>
+<li><strong>定期回顾优化</strong>：根据使用反馈不断调整和完善</li>
+<li><strong>团队共享最佳实践</strong>：分享成功案例和经验教训</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>提示词设计是与AI高效协作的基础技能。通过掌握”什么是提示词”、”为什么需要提示词设计”以及”如何设计有效提示词”的核心知识，你可以显著提升AI辅助工作的效率和质量。</p>
+<p>记住：好的提示词就像精准的指令，能够引导AI沿着你期望的方向思考和工作。通过持续实践和优化，你可以将AI转化为工作中的得力助手，释放更多创造力和生产力。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI/" rel="tag"># AI</a>
+              <a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%B7%A5%E7%A8%8B/" rel="tag"># 提示词工程</a>
+              <a href="/tags/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1/" rel="tag"># 提示词设计</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/26/%E4%BD%BF%E7%94%A8JavaCV%E5%AE%9E%E7%8E%B0RTSP%E6%B5%81%E8%BD%ACFLV%E5%AD%98%E5%82%A8/" rel="prev" title="使用JavaCV实现RTSP流转FLV存储">
+                  <i class="fa fa-angle-left"></i> 使用JavaCV实现RTSP流转FLV存储
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Janson</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

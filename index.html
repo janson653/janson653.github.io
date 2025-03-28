@@ -132,7 +132,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -158,7 +158,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://janson653.github.io/2025/03/26/testhtml/">
+    <link itemprop="mainEntityOfPage" href="https://janson653.github.io/2025/03/28/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/26/testhtml/" class="post-title-link" itemprop="url">testhtml</a>
+          <a href="/2025/03/28/%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97/" class="post-title-link" itemprop="url">提示词设计指南：从入门到精通</a>
         </h2>
 
         <div class="post-meta-container">
@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-03-26 22:23:39 / Modified: 22:25:35" itemprop="dateCreated datePublished" datetime="2025-03-26T22:23:39+08:00">2025-03-26</time>
+      <time title="Created: 2025-03-28 21:54:09 / Modified: 22:09:35" itemprop="dateCreated datePublished" datetime="2025-03-28T21:54:09+08:00">2025-03-28</time>
     </span>
 
   
@@ -201,79 +201,100 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <div>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex justify-center items-center min-h-screen bg-gray-100">
-<div class="w-[1080px] border-2 border-white rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl p-8 relative overflow-hidden">
-    <!-- 背景几何图案 -->
-    <div class="absolute inset-0 mix-blend-overlay opacity-20">
-        <div class="absolute w-24 h-24 bg-white rounded-full -top-6 -left-6"></div>
-        <div class="absolute w-32 h-32 border-2 border-white rounded-lg top-1/4 right-8 rotate-45"></div>
-        <div class="absolute h-48 w-1 bg-white left-1/3 top-16 rotate-30"></div>
-        <div class="absolute w-40 h-40 border-4 border-white rounded-full bottom-8 right-20"></div>
-    </div>
+          <h1 id="提示词设计指南：从入门到精通"><a href="#提示词设计指南：从入门到精通" class="headerlink" title="提示词设计指南：从入门到精通"></a>提示词设计指南：从入门到精通</h1><h2 id="什么是提示词设计？"><a href="#什么是提示词设计？" class="headerlink" title="什么是提示词设计？"></a>什么是提示词设计？</h2><p>提示词设计是指在与AI交互时，通过精心构造的指令来引导AI产生预期输出的过程。一个完整的提示词通常包含：</p>
+<ul>
+<li>明确的任务描述</li>
+<li>必要的上下文信息</li>
+<li>具体的输出要求</li>
+<li>合理的约束条件</li>
+</ul>
+<p>有效的提示词就像一把钥匙，能够精准地打开AI能力的大门，让它成为你工作和学习中的得力助手。</p>
+<h2 id="为什么要学习提示词设计？"><a href="#为什么要学习提示词设计？" class="headerlink" title="为什么要学习提示词设计？"></a>为什么要学习提示词设计？</h2><p>掌握提示词设计能带来以下核心价值：</p>
+<ol>
+<li><strong>提高效率</strong>：减少反复沟通，一次性获得所需结果</li>
+<li><strong>提升质量</strong>：获得更精准、更专业的输出内容</li>
+<li><strong>扩展应用</strong>：解锁AI在各种场景中的应用潜力</li>
+<li><strong>优化协作</strong>：让AI更好地理解并完成复杂任务</li>
+<li><strong>节省成本</strong>：减少AI使用次数，提高资源利用率</li>
+</ol>
+<p>当你掌握了提示词设计技巧，与AI的交互将从简单的”问答”升级为高效的”协作”。</p>
+<h2 id="如何设计有效的提示词？"><a href="#如何设计有效的提示词？" class="headerlink" title="如何设计有效的提示词？"></a>如何设计有效的提示词？</h2><h3 id="1-CRAC模型：提示词设计的核心框架"><a href="#1-CRAC模型：提示词设计的核心框架" class="headerlink" title="1. CRAC模型：提示词设计的核心框架"></a>1. CRAC模型：提示词设计的核心框架</h3><p>高效的提示词设计可以遵循CRAC模型：</p>
+<h4 id="Context（上下文）"><a href="#Context（上下文）" class="headerlink" title="Context（上下文）"></a>Context（上下文）</h4><p>上下文为AI提供了理解任务的背景框架：</p>
+<ul>
+<li><p><strong>角色设定</strong>：明确AI应扮演的专业角色</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一位专业的软件架构师，精通分布式系统设计</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>场景描述</strong>：提供任务的具体场景</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个高并发电商平台的技术选型阶段</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>背景信息</strong>：提供必要的前置知识</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">考虑到我们的团队主要有Java和Python背景</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Request（需求）"><a href="#Request（需求）" class="headerlink" title="Request（需求）"></a>Request（需求）</h4><p>清晰的需求陈述是获得精准输出的基础：</p>
+<ul>
+<li><p><strong>任务描述</strong>：明确具体的任务目标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请设计一个可处理每秒10000次请求的订单系统架构</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>范围界定</strong>：指定关注的具体方面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重点关注数据存储、缓存策略和服务拆分</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>输出格式</strong>：指定期望的输出形式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以Markdown格式输出，包含架构图（使用mermaid语法）和关键组件说明</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Action（行动）"><a href="#Action（行动）" class="headerlink" title="Action（行动）"></a>Action（行动）</h4><p>行动部分指导AI如何执行任务：</p>
+<ul>
+<li><p><strong>步骤指导</strong>：拆分任务为清晰的步骤</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">首先分析业务需求，然后确定技术选型，最后提供具体实现建议</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>思考方法</strong>：指定分析或解决问题的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用CAP理论分析不同数据库选择的优缺点</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>条件处理</strong>：设置条件分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果需要强一致性，则推荐使用...；如果更注重可用性，则考虑...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="Constraints（约束）"><a href="#Constraints（约束）" class="headerlink" title="Constraints（约束）"></a>Constraints（约束）</h4><p>约束条件帮助确保输出满足特定要求：</p>
+<ul>
+<li><p><strong>限定条件</strong>：明确必须满足的条件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方案必须考虑云原生环境下的弹性伸缩</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>排除项</strong>：明确不需要考虑的方面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不需要详细讨论前端实现</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>质量要求</strong>：设定输出质量标准</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">代码示例必须包含错误处理和单元测试</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-常见场景应用示例"><a href="#2-常见场景应用示例" class="headerlink" title="2. 常见场景应用示例"></a>2. 常见场景应用示例</h3><h4 id="编程与代码优化"><a href="#编程与代码优化" class="headerlink" title="编程与代码优化"></a>编程与代码优化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">你是一位精通性能优化的高级后端开发工程师。请：</span><br><span class="line">1. 审查以下Java代码中的性能瓶颈</span><br><span class="line">2. 分析可能的内存泄漏问题</span><br><span class="line">3. 提供优化后的代码实现</span><br><span class="line"></span><br><span class="line">代码性能要求：</span><br><span class="line">- 能够处理百万级数据集</span><br><span class="line">- 响应时间控制在50ms内</span><br><span class="line">- 内存占用不超过1GB</span><br><span class="line"></span><br><span class="line">请首先分析代码结构，然后指出关键问题，最后给出改进建议和优化代码。</span><br><span class="line">不需要解释基础Java概念，重点关注性能优化策略。</span><br></pre></td></tr></table></figure>
 
-<pre><code>&lt;!-- 标题区域 --&gt;
-&lt;div class=&quot;relative mb-8&quot;&gt;
-    &lt;div class=&quot;text-white text-right space-y-1 mb-6&quot;&gt;
-        &lt;p class=&quot;text-[16px] font-normal opacity-50&quot;&gt;作者：小张&lt;/p&gt;
-        &lt;p class=&quot;text-[16px] font-normal opacity-50&quot;&gt;2025-03-25&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;h1 class=&quot;text-[32px] font-medium text-white shadow-sm mb-2&quot;&gt;未来已来，AI重塑生活&lt;/h1&gt;
-    &lt;h2 class=&quot;text-[24px] font-normal text-white&quot;&gt;拥抱智能新时代的无限可能&lt;/h2&gt;
-&lt;/div&gt;
+<h4 id="流程图设计"><a href="#流程图设计" class="headerlink" title="流程图设计"></a>流程图设计</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">作为业务分析师，请设计一个客户退款处理流程图：</span><br><span class="line">1. 使用mermaid流程图语法</span><br><span class="line">2. 包含以下关键节点：</span><br><span class="line">   - 退款申请提交</span><br><span class="line">   - 客服审核</span><br><span class="line">   - 财务审批</span><br><span class="line">   - 退款处理</span><br><span class="line">   - 结果通知</span><br><span class="line"></span><br><span class="line">流程需要考虑：</span><br><span class="line">- 多种退款原因的处理路径</span><br><span class="line">- 审核拒绝的申诉机制</span><br><span class="line">- 不同支付方式的退款时效</span><br><span class="line"></span><br><span class="line">请确保流程图简洁清晰，节点命名规范，并包含必要的决策分支和条件说明。</span><br></pre></td></tr></table></figure>
 
-&lt;!-- 小卡片容器 --&gt;
-&lt;div class=&quot;relative grid grid-cols-3 gap-6&quot;&gt;
-    &lt;!-- 卡片1 --&gt;
-    &lt;div class=&quot;w-[320px] bg-white rounded-xl p-6 shadow-md border&quot;&gt;
-        &lt;div class=&quot;mb-4 relative&quot;&gt;
-            &lt;h3 class=&quot;text-[20px] font-medium flex items-center&quot;&gt;
-                &lt;svg class=&quot;w-5 h-5 mr-2&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-                    &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M13 10V3L4 14h7v7l9-11h-7z&quot;/&gt;
-                &lt;/svg&gt;
-                智能进化
-            &lt;/h3&gt;
-            &lt;div class=&quot;absolute bottom-0 left-0 w-16 h-1 bg-pink-400/50&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;ol class=&quot;text-[16px] font-light text-black/90 leading-relaxed space-y-2 list-decimal list-inside&quot;&gt;
-            &lt;li&gt;自然语言处理突破&lt;/li&gt;
-            &lt;li&gt;多模态学习普及&lt;/li&gt;
-            &lt;li class=&quot;text-blue-600&quot;&gt;自适应算法升级&lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/div&gt;
+<h4 id="文档写作"><a href="#文档写作" class="headerlink" title="文档写作"></a>文档写作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">扮演技术文档专家，请编写一份《微服务架构设计指南》：</span><br><span class="line">1. 目标读者是具有1-3年开发经验的后端工程师</span><br><span class="line">2. 需要涵盖以下内容：</span><br><span class="line">   - 微服务设计原则</span><br><span class="line">   - 服务边界划分方法</span><br><span class="line">   - 通信机制选择</span><br><span class="line">   - 数据一致性策略</span><br><span class="line">   - 部署与运维最佳实践</span><br><span class="line"></span><br><span class="line">要求：</span><br><span class="line">- 使用Markdown格式</span><br><span class="line">- 包含清晰的目录结构</span><br><span class="line">- 每部分提供实际案例说明</span><br><span class="line">- 总字数控制在3000字以内</span><br><span class="line"></span><br><span class="line">重点突出实用性和可操作性，避免过于理论化的内容。</span><br></pre></td></tr></table></figure>
 
-    &lt;!-- 卡片2 --&gt;
-    &lt;div class=&quot;w-[320px] bg-white rounded-xl p-6 shadow-md border&quot;&gt;
-        &lt;div class=&quot;mb-4 relative&quot;&gt;
-            &lt;h3 class=&quot;text-[20px] font-medium flex items-center&quot;&gt;
-                &lt;svg class=&quot;w-5 h-5 mr-2&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-                    &lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M12 6v6m0 0v6m0-6h6m-6 0H6&quot;/&gt;
-                &lt;/svg&gt;
-                生活革新
-            &lt;/h3&gt;
-            &lt;div class=&quot;absolute bottom-0 left-0 w-16 h-1 bg-blue-400/50&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;ul class=&quot;text-[16px] font-light text-black/90 leading-relaxed space-y-2 list-disc list-inside&quot;&gt;
-            &lt;li&gt;智能家居全覆盖&lt;/li&gt;
-            &lt;li&gt;个性化医疗方案&lt;/li&gt;
-            &lt;li class=&quot;underline&quot;&gt;教育模式变革&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
+<h4 id="内容分析与总结"><a href="#内容分析与总结" class="headerlink" title="内容分析与总结"></a>内容分析与总结</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">作为数据分析专家，请对以下季度销售报告进行分析总结：</span><br><span class="line">1. 提取关键销售数据和趋势</span><br><span class="line">2. 使用SWOT框架分析业务状况</span><br><span class="line">3. 输出格式要求：</span><br><span class="line">   - 核心发现（不超过5点）</span><br><span class="line">   - 数据支持的关键洞察</span><br><span class="line">   - 针对下季度的3-5条行动建议</span><br><span class="line"></span><br><span class="line">分析重点：</span><br><span class="line">- 产品类别表现对比</span><br><span class="line">- 区域销售差异</span><br><span class="line">- 客户购买行为变化</span><br><span class="line">- 促销活动ROI</span><br><span class="line"></span><br><span class="line">请使用数据驱动决策的方法，确保建议具有可操作性和明确的预期结果。</span><br></pre></td></tr></table></figure>
 
-    &lt;!-- 其他卡片（因篇幅限制保留结构） --&gt;
-    &lt;!-- 卡片3-6的结构与卡片1-2类似，调整内容和样式即可 --&gt;
-&lt;/div&gt;
-</code></pre>
-</div>
-</body>
-</html>
-</div>
+<h3 id="3-提示词优化的迭代方法"><a href="#3-提示词优化的迭代方法" class="headerlink" title="3. 提示词优化的迭代方法"></a>3. 提示词优化的迭代方法</h3><h4 id="从简单到复杂的渐进式优化"><a href="#从简单到复杂的渐进式优化" class="headerlink" title="从简单到复杂的渐进式优化"></a>从简单到复杂的渐进式优化</h4><p><strong>第一步：基础提示</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解释Docker容器的基本概念</span><br></pre></td></tr></table></figure>
 
+<p><strong>第二步：增加角色与细节</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作为DevOps专家，解释Docker容器的核心概念，重点说明与虚拟机的区别，以及在微服务架构中的应用价值。</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三步：结构化与约束优化</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">作为DevOps专家，请用Markdown格式解释Docker容器的核心概念：</span><br><span class="line">1. 基本定义（50字以内）</span><br><span class="line">2. 与虚拟机的关键区别（列出3点）</span><br><span class="line">3. 在微服务架构中的应用（包含具体使用场景）</span><br><span class="line">4. 一个简单的Docker Compose示例</span><br><span class="line"></span><br><span class="line">面向对象是有1-2年开发经验的后端工程师，确保解释清晰易懂，避免过于基础的内容。</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-提示词效果评估与优化"><a href="#4-提示词效果评估与优化" class="headerlink" title="4. 提示词效果评估与优化"></a>4. 提示词效果评估与优化</h3><h4 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h4><ol>
+<li><strong>相关性</strong>：输出是否直接回答了问题，是否包含无关信息</li>
+<li><strong>完整性</strong>：是否覆盖了所有关键点，是否有重要信息缺失</li>
+<li><strong>准确性</strong>：信息是否准确无误，是否有事实性错误</li>
+<li><strong>实用性</strong>：输出是否可直接应用，是否提供了可操作的见解</li>
+<li><strong>一致性</strong>：多次测试结果是否一致，输出质量是否稳定</li>
+</ol>
+<h4 id="持续优化策略"><a href="#持续优化策略" class="headerlink" title="持续优化策略"></a>持续优化策略</h4><ol>
+<li><strong>建立提示词模板库</strong>：按场景和任务类型分类存储常用模板</li>
+<li><strong>记录效果与反馈</strong>：跟踪每个提示词的实际效果</li>
+<li><strong>定期回顾优化</strong>：根据使用反馈不断调整和完善</li>
+<li><strong>团队共享最佳实践</strong>：分享成功案例和经验教训</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>提示词设计是与AI高效协作的基础技能。通过掌握”什么是提示词”、”为什么需要提示词设计”以及”如何设计有效提示词”的核心知识，你可以显著提升AI辅助工作的效率和质量。</p>
+<p>记住：好的提示词就像精准的指令，能够引导AI沿着你期望的方向思考和工作。通过持续实践和优化，你可以将AI转化为工作中的得力助手，释放更多创造力和生产力。</p>
 
       
     </div>
